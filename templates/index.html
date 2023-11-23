@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Create QR Codes With Python</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>QR Code Generator</h1>
+            <h2>Inserta un link para generar tu código QR 😊</h2>
+            <br>
+        </div>
+        <form action="/" method="POST">
+            <input type="text" name="link"/>
+            <button type="submit">Generar</button>
+        </form>
+        {% if data %}
+        <div class="generated">
+            <img src="{{data}}" alt="">
+            <p>Este es el código QR que he generado para ti 👆</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100dvh;
+    background: linear-gradient(
+        130deg,
+        rgba(150, 93, 233, 1) 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+}
+
+.container {
+    background-color: white;
+    width: 70%;
+    min-width: 420px;
+    padding: 35px 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #301934;
+}
+
+h2, p {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #524F81;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+form input {
+    width: 100%;
+    font-weight: 400;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1.2px solid #c4cae0;
+    margin-top: 5px;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #7851a9;
+}
+
+form button {
+    border: none;
+    padding: 10px 20px;
+    background: linear-gradient(
+        82.3deg,
+        rgba(150, 93, 233, 1) 10.8%,
+        rgba(99, 88, 238, 1) 94.3%
+    );
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.05em;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.generated {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>
